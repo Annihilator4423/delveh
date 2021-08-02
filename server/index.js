@@ -4,13 +4,10 @@ import * as chat from "chat";
 
 // =============================== Commands Begin ==================================================
 
-
-chat.registerCmd("poweroff", player => {
-    alt.emitAllClients("blackouton");
-});
-
-chat.registerCmd("poweron", player => {
-    alt.emitAllClients("blackoutoff");
+chat.registerCmd("dv", player => {
+    if(player.vehicle !== null) {
+        player.vehicle.destroy();
+    }
 });
 
 
